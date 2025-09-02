@@ -8,13 +8,13 @@ metadata:
 fullClone: {{ $nodepool.fullClone }}
 insecureTls: {{ $nodepool.insecureTLs }}
 isoDevice: {{ $nodepool.isoDevice }}
-memory: {{ $nodepool.memorySize }}
+memory: {{ $nodepool.memorySize | quote }}
 networkInterface: {{ $nodepool.networkInterface }}
-processorCores: {{ $nodepool.processorCores }}
-processorSockets: {{ $nodepool.processorSockets }}
+processorCores: {{ $nodepool.processorCores | quote }}
+processorSockets: {{ $nodepool.processorSockets | quote }}
 resourcePool: {{ $nodepool.resourcePool }}
 sshUser: {{ $nodepool.sshUser }}
-template: {{ $nodepool.template }}
+template: {{ $nodepool.template | quote }}
 ---
 {{- end }}
 {{ $nodepool := .Values.nodepool }}
@@ -27,13 +27,13 @@ metadata:
 fullClone: {{ $nodepool.fullClone }}
 insecureTls: {{ $nodepool.insecureTLs }}
 isoDevice: {{ $nodepool.isoDevice }}
-memory: {{ $nodepool.memorySize }}
+memory: {{ $nodepool.memorySize | quote }}
 networkInterface: {{ $nodepool.networkInterface }}
-processorCores: {{ $nodepool.processorCores }}
-processorSockets: {{ $nodepool.processorSockets }}
+processorCores: {{ $nodepool.processorCores | quote }}
+processorSockets: {{ $nodepool.processorSockets | quote }}
 resourcePool: {{ $nodepool.resourcePool }}
 sshUser: {{ $nodepool.sshUser }}
-template: {{ $nodepool.template }}
+template: {{ $nodepool.template | quote }}
 {{- end }}
 {{- end }}
 

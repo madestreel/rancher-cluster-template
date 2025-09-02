@@ -37,7 +37,7 @@ monitoring:
 
 cloudprovider: pve
 
-cloudCredentialSecretName: rancher-pve
+cloudCredentialSecretName:
 
 # Specify nodepool options. Can add multiple node groups, specify etcd, controlplane and worker roles.
 nodepools:

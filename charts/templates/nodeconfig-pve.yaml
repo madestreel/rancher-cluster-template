@@ -8,7 +8,7 @@ metadata:
 fullClone: {{ $nodepool.fullClone }}
 insecureTls: {{ $nodepool.insecureTLs }}
 isoDevice: {{ $nodepool.isoDevice }}
-memory: {{ $nodepool.memorySize | quote }}
+memory: {{ $nodepool.memory | quote }}
 networkInterface: {{ $nodepool.networkInterface }}
 processorCores: {{ $nodepool.processorCores | quote }}
 processorSockets: {{ $nodepool.processorSockets | quote }}

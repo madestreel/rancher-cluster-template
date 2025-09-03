@@ -30,7 +30,7 @@ The general cluster configuration options are available through [values.yaml](./
 To provide your own configuration, modify the original values.yaml and create your own version, and pass it to helm. For example:
 
 ```bash
-helm install --namespace fleet-default --values ./charts/your-own-values.yaml do-cluster ./charts
+helm install --namespace fleet-local --values ./charts/your-own-values.yaml do-cluster ./charts
 ```
 
 For different cloud provider options on nodepools, checkout

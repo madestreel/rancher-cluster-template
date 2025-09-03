@@ -106,4 +106,6 @@ nodepools:
     processorSockets: "1"
     resourcePool: rancher-pool
     sshUser: root
+    paused: false
+    displayName: pool1
     template: "183"

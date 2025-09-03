@@ -45,7 +45,6 @@ spec:
         kind: PveConfig
         {{- end}}
         name: {{ $nodepool.name }}
-      paused: {{ $nodepool.paused }}
       displayName: {{ $nodepool.displayName }}
       {{- if $nodepool.rollingUpdate }}
       rollingUpdate:

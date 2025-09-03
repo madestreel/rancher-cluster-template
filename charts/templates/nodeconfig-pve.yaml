@@ -15,7 +15,6 @@ processorSockets: {{ $nodepool.processorSockets | quote }}
 resourcePool: {{ $nodepool.resourcePool }}
 sshUser: {{ $nodepool.sshUser }}
 displayName: {{ $nodepool.displayName }}
-paused: {{ $nodepool.paused }}
 sshUser: {{ $nodepool.sshUser }}
 template: {{ $nodepool.template | quote }}
 ---
@@ -36,7 +35,6 @@ processorCores: {{ $nodepool.processorCores | quote }}
 processorSockets: {{ $nodepool.processorSockets | quote }}
 resourcePool: {{ $nodepool.resourcePool }}
 displayName: {{ $nodepool.displayName }}
-paused: {{ $nodepool.paused }}
 sshUser: {{ $nodepool.sshUser }}
 template: {{ $nodepool.template | quote }}
 {{- end }}

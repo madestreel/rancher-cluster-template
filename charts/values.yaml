@@ -96,7 +96,7 @@ nodepools:
     # specify machineDeployment annotations
     # machineDeploymentAnnotations: {}
 
-    name: pve-nodepool-1
+    name: pool1
     fullClone: true
     insecureTls: false
     isoDevice: scsi1

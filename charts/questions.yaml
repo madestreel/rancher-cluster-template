@@ -75,47 +75,40 @@ questions:
         description: "Custom monitoring chart values"
         type: multiline
         group: "Monitoring"
-  - variable: nodepools
-    type: array
-    label: "Node Pools"
+  - variable: nodepools.0.name
+    default:
+    description: "Specify nodepool name"
+    type: string
+    label: "Nodepool name"
     required: true
     show_if: cloudprovider=amazonec2 || cloudprovider=pve || cloudprovider=harvester
     group: "Nodepools"
-    subquestions:
-      - variable: name
-        default:
-        description: "Specify nodepool name"
-        type: string
-        label: "Nodepool name"
-        required: true
-        show_if: cloudprovider=amazonec2 || cloudprovider=pve || cloudprovider=harvester
-        group: "Nodepools"
-      - variable: quantity
-        default: 1
-        description: "Specify node count"
-        type: int
-        required: true
-        show_if: cloudprovider=amazonec2 || cloudprovider=pve || cloudprovider=harvester
-        label: "Node count"
-        group: "Nodepools"
-      - variable: etcd
-        default: true
-        label: etcd
-        type: boolean
-        show_if: cloudprovider=amazonec2 || cloudprovider=pve || cloudprovider=harvester
-        group: "Nodepools"
-      - variable: worker
-        default: true
-        label: worker
-        type: boolean
-        show_if: cloudprovider=amazonec2 || cloudprovider=pve || cloudprovider=harvester
-        group: "Nodepools"
-      - variable: controlplane
-        label: controlplane
-        default: true
-        type: boolean
-        show_if: cloudprovider=amazonec2 || cloudprovider=pve || cloudprovider=harvester
-        group: "Nodepools"
+  - variable: nodepools.0.quantity
+    default: 1
+    description: "Specify node count"
+    type: int
+    required: true
+    show_if: cloudprovider=amazonec2 || cloudprovider=pve || cloudprovider=harvester
+    label: "Node count"
+    group: "Nodepools"
+  - variable: nodepools.0.etcd
+    default: true
+    label: etcd
+    type: boolean
+    show_if: cloudprovider=amazonec2 || cloudprovider=harvester
+    group: "Nodepools"
+  - variable: nodepools.0.worker
+    default: true
+    label: worker
+    type: boolean
+    show_if: cloudprovider=amazonec2 || cloudprovider=harvester
+    group: "Nodepools"
+  - variable: nodepools.0.controlplane
+    label: controlplane
+    default: true
+    type: boolean
+    show_if: cloudprovider=amazonec2 || cloudprovider=harvester
+    group: "Nodepools"
   # EC2
   - variable: nodepools.0.region
     label: "Region"

@@ -46,7 +46,8 @@ nodepools:
     worker: true
 
     # specify node labels
-    labels: {}
+    labels:
+      topology.kubernetes.io/zone: vm016
 
     # specify node taints
     taints: {}

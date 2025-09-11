@@ -28,7 +28,7 @@ localClusterAuthEndpoint:
 
 # enable monitoring
 monitoring:
-  enabled: false
+  enabled: true
   # specify which version to install, can be semver range. If version is empty or is semver range, it will pick up the latest version.
   # version: ""
   # specify cutsom values set
@@ -107,4 +107,4 @@ nodepools:
     resourcePool: rancher-pool
     sshUser: root
     displayName: pool1
-    template: "171"
+    template: "165"

@@ -56,7 +56,7 @@ questions:
         type: multiline
         group: "Auth Access Endpoint"
   - variable: monitoring.enabled
-    default: false
+    default: true
     label: "Enable monitoring"
     description: "Enable monitoring"
     type: boolean

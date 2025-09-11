@@ -29,6 +29,9 @@ spec:
   # specify rancher helm chart values deployed into downstream cluster
   # rancherValues: {}
   rkeConfig:
+    {{- if .Values.registries }}
+    registries: {{ toYaml .Values.registries | nindent 6 }}
+    {{- end }}
     machinePools:
     {{- if .Values.nodepools }} {{ range $index, $nodepool := .Values.nodepools }}
     - controlPlaneRole: {{ $nodepool.controlplane }}

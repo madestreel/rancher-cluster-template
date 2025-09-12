@@ -245,14 +245,14 @@ questions:
   # PVE
   - variable: nodepools.0.processorCores
     label: "CPUs"
-    default: 4
+    default: 8
     type: string
     description: "number of CPUs for your VM"
     show_if: cloudprovider=pve
     group: "Nodepools"
   - variable: nodepools.0.memory
     label: "Memory Size"
-    default: 8000
+    default: 24000
     type: string
     description: "Memory for VM in MiB (available RAM)"
     show_if: cloudprovider=pve

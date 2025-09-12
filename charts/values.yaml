@@ -101,9 +101,9 @@ nodepools:
     fullClone: true
     insecureTls: false
     isoDevice: scsi1
-    memory: "12000"
+    memory: "24000"
     networkInterface: net0
-    processorCores: "4"
+    processorCores: "8"
     processorSockets: "1"
     resourcePool: rancher-pool
     sshUser: root

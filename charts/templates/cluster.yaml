@@ -3,6 +3,7 @@ kind: Cluster
 metadata:
   {{- if .Values.cluster.labels }}
   labels:
+    env: {{ .Values.cluster.env }}
 {{ toYaml .Values.cluster.labels | indent 4 }}
   {{- end }}
   {{- if .Values.cluster.annotations }}

@@ -4,8 +4,6 @@ kind: ManagedChart
 metadata:
   name: monitoring-crd-{{ .Values.cluster.name }}
   namespace: fleet-default
-  finalizers:
-  - wrangler.cattle.io/rke-cluster-remove
 spec:
   chart: "rancher-monitoring-crd"
   repoName: "rancher-charts"
@@ -24,8 +22,6 @@ kind: ManagedChart
 metadata:
   name: monitoring-{{ .Values.cluster.name }}
   namespace: fleet-local
-  finalizers:
-  - wrangler.cattle.io/rke-cluster-remove
 spec:
   chart: "rancher-monitoring"
   repoName: "rancher-charts"

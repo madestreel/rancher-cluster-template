@@ -16,6 +16,7 @@ spec:
   defaultNamespace: "cattle-monitoring-system"
   targets:
   - clusterName: {{ .Values.cluster.name }}
+  clusterName: {{ .Values.cluster.name }}
 ---
 apiVersion: management.cattle.io/v3
 kind: ManagedChart
@@ -46,5 +47,6 @@ spec:
   defaultNamespace: "cattle-monitoring-system"
   targets:
   - clusterName: {{ .Values.cluster.name }}
+  clusterName: {{ .Values.cluster.name }}
 ---
 {{- end }}

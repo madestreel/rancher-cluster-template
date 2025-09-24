@@ -9,6 +9,9 @@ cluster:
   # specify cluster annotations
   annotations: {}
   env: development
+  ip_pool_range: 172.16.40.250-172.16.40.254
+  applications:
+    - workload
 
 # specify cloud provider, options are amazonec2, digitalocean, azure, vsphere or custom
 

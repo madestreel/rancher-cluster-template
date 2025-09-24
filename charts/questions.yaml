@@ -13,6 +13,20 @@ questions:
     required: true
     type: string
     group: "General"
+  - variable: cluster.applications
+    default:
+    description: "Specify the applications of the cluster"
+    label: "Cluster env"
+    required: true
+    type: string
+    group: "General"
+  - variable: cluster.ip_pool_range
+    default: 172.16.40.250-172.16.40.254
+    description: "Specify the ip pool range for the cluster"
+    label: "Cluster ip pool"
+    required: true
+    type: string
+    group: "General"
   - variable: cloudCredentialSecretName
     default:
     description: "CloudCredentialName for provisioning cluster"

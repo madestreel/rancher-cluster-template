@@ -5,7 +5,7 @@ metadata:
     env: {{ .Values.cluster.env }}
     {{- if .Values.applications -}}
     {{ range $k,$v := .Values.applications }}
-    applications.dstny.com/{{$k}}: {{ $v }}
+    applications.dstny.com/{{$k}}: {{ $v | quote }}
     {{- end -}}
     {{- end }}
     {{- if .Values.monitoring.enabled }}

@@ -62,27 +62,93 @@ questions:
       - v1.31.7+rke2r1
       - v1.30.11+rke2r1
     group: "General"
-  - variable: applications.scp
+  - variable: applications.scp.enabled
     default: false
     description: "Install SCP in the cluster"
     label: "Install SCP"
     required: false
     type: boolean
     group: "Applications"
-  - variable: applications.converge
+    show_subquestion_if: true
+    subquestions:
+      - variable: applications.scp.version
+        default: latest
+        description: "Version to install"
+        label: "Version"
+        required: false
+        type: string
+        group: "Applications"
+      - variable: applications.scp.url
+        description: "Git repo to deploy the application"
+        label: "Git URL"
+        required: true
+        type: string
+        group: "Applications"
+      - variable: applications.scp.path
+        default: .
+        description: "Path to the helm chart within the git repo"
+        label: "Path"
+        required: false
+        type: string
+        group: "Applications"
+  - variable: applications.converge.enabled
     default: false
     description: "Install Converge in the cluster"
     label: "Install Converge"
     required: false
     type: boolean
     group: "Applications"
-  - variable: applications.csfe_core
+    show_subquestion_if: true
+    subquestions:
+      - variable: applications.converge.version
+        default: latest
+        description: "Version to install"
+        label: "Version"
+        required: false
+        type: string
+        group: "Applications"
+      - variable: applications.converge.url
+        description: "Git repo to deploy the application"
+        label: "Git URL"
+        required: true
+        type: string
+        group: "Applications"
+      - variable: applications.converge.path
+        default: .
+        description: "Path to the helm chart within the git repo"
+        label: "Path"
+        required: false
+        type: string
+        group: "Applications"
+  - variable: applications.csfe_core.enabled
     default: false
     description: "Install CSFE for Core in the cluster"
     label: "Install CSFE Core"
     required: false
     type: boolean
     group: "Applications"
+    show_subquestion_if: true
+    subquestions:
+      - variable: applications.csfe_core.version
+        default: latest
+        description: "Version to install"
+        label: "Version"
+        required: false
+        type: string
+        group: "Applications"
+      - variable: applications.csfe_core.url
+        description: "Git repo to deploy the application"
+        label: "Git URL"
+        required: true
+        type: string
+        group: "Applications"
+      - variable: applications.csfe_core.path
+        default: .
+        description: "Path to the helm chart within the git repo"
+        label: "Path"
+        required: false
+        type: string
+        group: "Applications"
   - variable: monitoring.enabled
     default: true
     label: "Enable monitoring"

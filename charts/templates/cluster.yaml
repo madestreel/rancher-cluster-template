@@ -5,7 +5,7 @@ metadata:
     env: {{ .Values.cluster.env }}
     {{- if hasKey .Values "applications" -}}
     {{ range $k,$v := .Values.applications }}
-    applications.dstny.com/{{$k}}: {{ $v | quote }}
+    applications.dstny.com/{{$k}}: {{ $v.enabled | quote }}
     {{- end -}}
     {{- end }}
     {{- if .Values.monitoring.enabled }}
@@ -23,6 +23,7 @@ metadata:
   name: {{ .Values.cluster.name }}
   namespace: fleet-default
 spec:
+  templateValues: {{ .Values | toYaml | nindent 4 }}
   {{- if .Values.cloudCredentialSecretName }}
   cloudCredentialSecretName: {{ .Values.cloudCredentialSecretName }}
   {{- end }}

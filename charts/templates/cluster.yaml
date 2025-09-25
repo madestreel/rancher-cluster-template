@@ -3,7 +3,7 @@ kind: Cluster
 metadata:
   labels:
     env: {{ .Values.cluster.env }}
-    {{- if .Values.applications -}}
+    {{- if hasKey .Values "applications" -}}
     {{ range $k,$v := .Values.applications }}
     applications.dstny.com/{{$k}}: {{ $v | quote }}
     {{- end -}}

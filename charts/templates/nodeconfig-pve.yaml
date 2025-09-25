@@ -3,7 +3,7 @@
 apiVersion: rke-machine-config.cattle.io/v1
 kind: PveConfig
 metadata:
-  name: {{ $nodepool.name }}
+  name: {{ $.Values.cluster.name }}-{{ $nodepool.name }}
   namespace: fleet-default
 fullClone: {{ $nodepool.fullClone }}
 insecureTls: {{ $nodepool.insecureTLs }}
@@ -23,7 +23,7 @@ template: {{ $nodepool.template | quote }}
 apiVersion: rke-machine-config.cattle.io/v1
 kind: PveConfig
 metadata:
-  name: {{ $nodepool.name }}
+  name: {{ $.Values.cluster.name }}-{{ $nodepool.name }}
   namespace: fleet-local
 fullClone: {{ $nodepool.fullClone }}
 insecureTls: {{ $nodepool.insecureTLs }}

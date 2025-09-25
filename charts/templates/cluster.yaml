@@ -11,7 +11,8 @@ metadata:
     {{- if .Values.monitoring.enabled }}
     monitoring: "true"
     {{- end }}
-    metallb_ip_range: {{ .Values.cluster.ip_range }}
+    metallb_address: {{ .Values.cluster.ip_range.address | quote }}
+    metallb_prefix: {{ .Values.cluster.ip_range.prefix | quote }}
   {{- if .Values.cluster.labels }}
 {{ toYaml .Values.cluster.labels | indent 4 }}
   {{- end }}

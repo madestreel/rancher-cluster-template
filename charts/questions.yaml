@@ -18,13 +18,21 @@ questions:
       - staging
       - production
     group: "General"
-  - variable: cluster.ip_range
-    default: 172.16.40.250/32
+  - variable: cluster.ip_range.address
+    default: 172.16.40.250
     description: "Specify the ip range for the cluster"
     label: "Cluster ip range"
     required: true
     type: string
     group: "General"
+    subquestions:
+      - variable: cluster.ip_range.prefix
+        default: 32
+        description: "Specify the CIDR prefix length"
+        label: "Cluster CIDR prefix"
+        required: true
+        type: string
+        group: "General"
   - variable: cloudCredentialSecretName
     default:
     description: "CloudCredentialName for provisioning cluster"

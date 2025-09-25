@@ -9,7 +9,9 @@ cluster:
   # specify cluster annotations
   annotations: {}
   env: development
-  ip_range: 172.16.40.250/32
+  ip_range:
+    address: 172.16.40.250
+    prefix: 32
 applications:
 
 # specify cloud provider, options are amazonec2, digitalocean, azure, vsphere or custom

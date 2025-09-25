@@ -54,21 +54,21 @@ questions:
       - v1.31.7+rke2r1
       - v1.30.11+rke2r1
     group: "General"
-  - variable: applications.0.scp
+  - variable: applications.scp
     default: false
     description: "Install SCP in the cluster"
     label: "Install SCP"
     required: false
     type: boolean
     group: "Applications"
-  - variable: applications.1.converge
+  - variable: applications.converge
     default: false
     description: "Install Converge in the cluster"
     label: "Install Converge"
     required: false
     type: boolean
     group: "Applications"
-  - variable: applications.2.csfe_core
+  - variable: applications.csfe_core
     default: false
     description: "Install CSFE for Core in the cluster"
     label: "Install CSFE Core"

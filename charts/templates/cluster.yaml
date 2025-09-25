@@ -9,7 +9,7 @@ metadata:
     {{- end -}}
     {{- end }}
     {{- if .Values.monitoring.enabled }}
-    monitoring: true
+    monitoring: "true"
     {{- end }}
     metallb_ip_range: {{ .Values.cluster.ip_range }}
   {{- if .Values.cluster.labels }}

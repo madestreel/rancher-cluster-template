@@ -3,8 +3,15 @@ kind: Cluster
 metadata:
   labels:
     env: {{ .Values.cluster.env }}
-    applications: {{ .Values.cluster.applications }}
-    ip_pool_range: {{ .Values.cluster.ip_pool_range }}
+    {{- if .Values.applications -}}
+    {{ range $k,$v := .Values.applications }}
+    applications.dstny.com/{{$k}}: {{ $v }}
+    {{- end -}}
+    {{- end }}
+    {{- if .Values.monitoring.enabled }}
+    monitoring: true
+    {{- end }}
+    metallb_ip_range: {{ .Values.cluster.ip_range }}
   {{- if .Values.cluster.labels }}
 {{ toYaml .Values.cluster.labels | indent 4 }}
   {{- end }}

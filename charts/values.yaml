@@ -16,12 +16,18 @@ applications:
   scp:
     version: latest
     enabled: false
+    path:
+    url:
   csfe_core:
     version: latest
     enabled: false
+    path:
+    url:
   converge:
     version: latest
     enabled: false
+    url:
+    path:
 
 # specify cloud provider, options are amazonec2, digitalocean, azure, vsphere or custom
 

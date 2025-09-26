@@ -6,7 +6,7 @@ metadata:
     {{- if hasKey .Values "applications" -}}
     {{ range $k,$v := .Values.applications }}
     applications.dstny.com/{{$k}}-enabled: {{ $v.enabled | quote }}
-    {{- if .Vales.applications.enabled }}
+    {{- if .Values.applications.enabled }}
     applications.dstny.com/{{$k}}-version: {{ $v.version | quote }}
     {{- end -}}
     {{- end -}}

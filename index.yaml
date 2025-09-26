@@ -5,11 +5,11 @@ entries:
       catalog.cattle.io/namespace: fleet-local
       catalog.cattle.io/type: cluster-template
     apiVersion: v1
-    created: "2025-09-26T13:25:06.503932657+02:00"
+    created: "2025-09-26T15:03:20.985435928+02:00"
     description: Cluster template for rke2
-    digest: 0d84c7d5faa8053499015b231cd66bb57cc4e95b0dfcc54cfd1cbb5fc04485ae
+    digest: a629d1a1b9a497f1cdf345f847ac1cd4ce890c2b3332462f5892301806a02ab9
     name: cluster-template
     urls:
     - cluster-template-0.0.1.tgz
     version: 0.0.1
-generated: "2025-09-26T13:25:06.503642025+02:00"
+generated: "2025-09-26T15:03:20.985008221+02:00"

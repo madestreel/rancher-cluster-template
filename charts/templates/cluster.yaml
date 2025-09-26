@@ -5,7 +5,10 @@ metadata:
     env: {{ .Values.cluster.env }}
     {{- if hasKey .Values "applications" -}}
     {{ range $k,$v := .Values.applications }}
-    applications.dstny.com/{{$k}}: {{ $v.enabled | quote }}
+    applications.dstny.com/{{$k}}-enabled: {{ $v.enabled | quote }}
+    {{- if .Vales.applications.enabled }}
+    applications.dstny.com/{{$k}}-version: {{ $v.version | quote }}
+    {{- end -}}
     {{- end -}}
     {{- end }}
     {{- if .Values.monitoring.enabled }}
@@ -51,14 +54,8 @@ spec:
       quantity: {{ $nodepool.quantity }}
       name: {{ $nodepool.name }}
       machineConfigRef:
-        {{- if eq $.Values.cloudprovider "amazonec2" }}
-        kind: Amazonec2Config
-        {{- else if eq $.Values.cloudprovider "harvester" }}
-        kind: HarvesterConfig
-        {{- else if eq $.Values.cloudprovider "pve" }}
         kind: PveConfig
-        {{- end}}
-        name: {{ $nodepool.name }}
+        name: {{ .Values.cluster.name }}-{{ $nodepool.name }}
       displayName: {{ $nodepool.displayName }}
       {{- if $nodepool.rollingUpdate }}
       rollingUpdate:
@@ -91,14 +88,8 @@ spec:
       quantity: {{ $nodepool.quantity }}
       name: {{ $nodepool.name }}
       machineConfigRef:
-        {{- if eq $.Values.cloudprovider "amazonec2" }}
-        kind: Amazonec2Config
-        {{- else if eq $.Values.cloudprovider "harvester" }}
-        kind: HarvesterConfig
-        {{- else if eq $.Values.cloudprovider "pve" }}
         kind: PveConfig
-        {{- end}}
-        name: {{ $nodepool.name }}
+        name: {{ .Values.cluster.name }}-{{ $nodepool.name }}
       displayName: {{ $nodepool.displayName }}
       {{- if $nodepool.rollingUpdate }}
       rollingUpdate:

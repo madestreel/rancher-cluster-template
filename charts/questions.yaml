@@ -78,16 +78,19 @@ questions:
         required: false
         type: string
         group: "Applications"
-      - variable: applications.scp.url
-        description: "Git repo to deploy the application"
-        label: "Git URL"
-        required: true
-        type: string
-        group: "Applications"
-      - variable: applications.scp.path
-        default: .
-        description: "Path to the helm chart within the git repo"
-        label: "Path"
+  - variable: applications.analytics.enabled
+    default: false
+    description: "Install analytics in the cluster"
+    label: "Install Analytics"
+    required: false
+    type: boolean
+    group: "Applications"
+    show_subquestion_if: true
+    subquestions:
+      - variable: applications.analytics.version
+        default: latest
+        description: "Version to install"
+        label: "Version"
         required: false
         type: string
         group: "Applications"
@@ -107,19 +110,6 @@ questions:
         required: false
         type: string
         group: "Applications"
-      - variable: applications.converge.url
-        description: "Git repo to deploy the application"
-        label: "Git URL"
-        required: true
-        type: string
-        group: "Applications"
-      - variable: applications.converge.path
-        default: .
-        description: "Path to the helm chart within the git repo"
-        label: "Path"
-        required: false
-        type: string
-        group: "Applications"
   - variable: applications.csfe_core.enabled
     default: false
     description: "Install CSFE for Core in the cluster"
@@ -133,19 +123,6 @@ questions:
         default: latest
         description: "Version to install"
         label: "Version"
-        required: false
-        type: string
-        group: "Applications"
-      - variable: applications.csfe_core.url
-        description: "Git repo to deploy the application"
-        label: "Git URL"
-        required: true
-        type: string
-        group: "Applications"
-      - variable: applications.csfe_core.path
-        default: .
-        description: "Path to the helm chart within the git repo"
-        label: "Path"
         required: false
         type: string
         group: "Applications"

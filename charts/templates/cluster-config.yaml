@@ -5,5 +5,5 @@ metadata:
     cluster-owner: {{ .Values.cluster.name }}
   name: template-values-{{ .Values.cluster.name }}
 data:
-  {{ .Values | toYaml | nindent 2 }}
+  {{- .Values | toYaml | nindent 2 }}
 

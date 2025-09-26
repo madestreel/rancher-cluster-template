@@ -26,8 +26,8 @@ applications:
   converge:
     version: latest
     enabled: false
-    path:
     url:
+    path:
 
 # specify cloud provider, options are amazonec2, digitalocean, azure, vsphere or custom
 

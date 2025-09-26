@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  labels:
+    cluster-owner: {{ .Values.cluster.name }}
+  name: template-values-{{ .Values.cluster.name }}
+data:
+  {{ .Values | toYaml | nindent 2 }}
+

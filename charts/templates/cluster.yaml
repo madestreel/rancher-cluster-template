@@ -55,7 +55,7 @@ spec:
       name: {{ $nodepool.name }}
       machineConfigRef:
         kind: PveConfig
-        name: {{ .Values.cluster.name }}-{{ $nodepool.name }}
+        name: {{ $.Values.cluster.name }}-{{ $nodepool.name }}
       displayName: {{ $nodepool.displayName }}
       {{- if $nodepool.rollingUpdate }}
       rollingUpdate:

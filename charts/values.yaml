@@ -125,4 +125,4 @@ nodepools:
     resourcePool: rancher-pool
     sshUser: rancher
     displayName: pool1
-    template: "158"
+    template: "171"

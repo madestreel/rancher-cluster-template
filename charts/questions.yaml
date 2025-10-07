@@ -18,13 +18,6 @@ questions:
       - staging
       - production
     group: "General"
-  - variable: cluster.base_domain
-    default: infra.dev.esc.escaux.com
-    description: "Specify the base domain for the cluster"
-    label: "Base domain"
-    required: true
-    type: string
-    group: "General"
   - variable: cloudCredentialSecretName
     default:
     description: "CloudCredentialName for provisioning cluster"

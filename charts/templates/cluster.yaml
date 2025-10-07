@@ -15,6 +15,7 @@ metadata:
     monitoring: "true"
     {{- end }}
     networking.dstny.com/base-domain: {{ .Values.cluster.name }}.{{ .Values.cluster.base_domain }}
+    networking.dstny.com/zone: {{ .Values.cluster.base_domain }}
   {{- if .Values.cluster.labels }}
 {{ toYaml .Values.cluster.labels | indent 4 }}
   {{- end }}

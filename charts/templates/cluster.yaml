@@ -14,8 +14,7 @@ metadata:
     {{- if .Values.monitoring.enabled }}
     monitoring: "true"
     {{- end }}
-    metallb_address: {{ .Values.cluster.ip_range.address | quote }}
-    metallb_prefix: {{ .Values.cluster.ip_range.prefix | quote }}
+    networking.dstny.com/base-domain: {{ .Values.cluster.name }}.{{ .Values.cluster.base_domain }}
   {{- if .Values.cluster.labels }}
 {{ toYaml .Values.cluster.labels | indent 4 }}
   {{- end }}

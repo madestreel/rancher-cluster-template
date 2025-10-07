@@ -9,9 +9,7 @@ cluster:
   # specify cluster annotations
   annotations: {}
   env: development
-  ip_range:
-    address: 172.16.40.250
-    prefix: 32
+  base_domain: infra.dev.esc.escaux.com
 applications:
   scp:
     version: latest

@@ -9,7 +9,7 @@ cluster:
   # specify cluster annotations
   annotations: {}
   env: development
-  base_domain: infra.dev.esc.escaux.com
+  base_domain: dev-infra.escaux.com
 applications:
   scp:
     version: latest

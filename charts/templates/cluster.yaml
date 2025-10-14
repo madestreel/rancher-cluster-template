@@ -16,6 +16,10 @@ metadata:
     {{- end }}
     networking.dstny.com/base-domain: {{ .Values.cluster.name }}.{{ .Values.cluster.base_domain }}
     networking.dstny.com/zone: {{ .Values.cluster.base_domain }}
+    networking.dstny.com/kong-address-pool: {{ .Values.networking.ingress_ip_range }}
+    {{- if .Values.networking.ip_range.public }}
+    networking.dstny.com/public-pool: true
+    {{- end }}
   {{- if .Values.cluster.labels }}
 {{ toYaml .Values.cluster.labels | indent 4 }}
   {{- end }}

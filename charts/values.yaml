@@ -24,6 +24,12 @@ applications:
     version: latest
     enabled: false
 
+networking:
+  ip_range:
+    public: false
+    private: true
+  ingress_ip_range: private
+
 # specify cloud provider, options are amazonec2, digitalocean, azure, vsphere or custom
 
 kubernetesVersion: v1.33.3+rke2r1
